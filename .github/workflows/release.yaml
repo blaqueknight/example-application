@@ -49,7 +49,7 @@ jobs:
               "tag_name": "${{ env.TAG_NAME }}",
               "image": "docker.io/${{ secrets.REGISTRY_USER }}/example-application"
             }
-      - name: Build and Push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: ./example-application
