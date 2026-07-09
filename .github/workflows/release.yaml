@@ -52,7 +52,8 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./example-application
+          file: ./example-application/Dockerfile
           push: true
           tags: docker.io/${{ secrets.REGISTRY_USER }}/example-application:${{ env.TAG_NAME }}
           build-args: |
